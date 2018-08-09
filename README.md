@@ -134,6 +134,8 @@ Typically this approach takes one of two forms:
         this.handleHover = this.handleHover.bind(this);
         this.handleBlur = this.handleBlur.bind(this);
       }
+      
+      // ... method definitions
 
       render() {
         return <MyButton onClick={this.handleClick}>Click Me</MyButton>;
