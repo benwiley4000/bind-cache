@@ -15,7 +15,7 @@ function bindCache(instance, options) {
     var c = cache;
     // iterate each argument (fn, and any call arguments)
     // to find a cache specific to that set of arguments
-    for (let i = 0; i < arguments.length; i++) {
+    for (var i = 0; i < arguments.length; i++) {
       var arg = arguments[i];
       if (!c.has(arg)) {
         c.set(arg, new Map());
