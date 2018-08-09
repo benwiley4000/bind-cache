@@ -18,7 +18,7 @@ function bindCache(instance, options) {
     for (var i = 0; i < arguments.length; i++) {
       var arg = arguments[i];
       if (!c.has(arg)) {
-        c.set(arg, new Map());
+        c.set(arg, new _Map());
       }
       c = c.get(arg);
     }
