@@ -54,37 +54,18 @@ class MyComponent extends React.Component {
 }
 ```
 
-### bad usage
-
-```jsx
-// DON'T do this!
-const bind = bindCache(this);
-
-// this cache persists beyond the lifecycle of any particular MyComponent
-// instance which means we are holding cached methods in memory which may
-// no longer be of use. if we instantiate a ton of MyComponent instances
-// across the runtime of our app, we could start to run out of memory
-
-class MyComponent extends React.Component {
-  // ...
-  render() {
-    return <MyButton onClick={bind(this.handleClick)}>Click Me</MyButton>;
-  }
-}
-```
-
 ## install
 
 With npm:
 
 ```console
-npm install bind-cache
+npm install @benwiley4000/bind-cache
 ```
 
 Using a script tag:
 
 ```html
-<script src="https://unpkg.com/bind-cache"></script>
+<script src="https://unpkg.com/@benwiley4000/bind-cache"></script>
 <script>
   console.log(bindCache); // should be a function
 </script>
