@@ -1,6 +1,6 @@
 {
   "name": "@benwiley4000/bind-cache",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "description": "Bound method cache, ideal for React",
   "main": "index.js",
   "scripts": {
