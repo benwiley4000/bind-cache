@@ -6,6 +6,7 @@ Creates a cache of bound JavaScript functions created with [`Function.prototype.
 * Designed to be allocated only for the lifetime of an associated object
 * Works for binding call arguments to a method
 * Ideal for React components
+* 1.27 KB (unminfied)
 
 ## usage
 
