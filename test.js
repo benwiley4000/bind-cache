@@ -4,9 +4,7 @@ const bindCache = require('.');
 // TEST HELPERS
 
 function run(...args) {
-  for (const arg of args) {
-    arg();
-  }
+  return args.map(arg => arg());
 }
 
 let passedAssertions = 0;
@@ -36,8 +34,14 @@ function reportTestResults() {
 function runTests() {
   let instance;
 
+  function getBarResult(myArg, mySecondArg) {
+    return myArg + mySecondArg;
+  }
+
   const argument1 = 'hey';
   const argument2 = 'ho';
+  const result1 = 'myresult';
+  const result2 = getBarResult(argument1, argument2);
 
   class MyClass {
     constructor() {
@@ -47,7 +51,9 @@ function runTests() {
       const boundBar = this.bind(this.bar, argument1, argument2);
 
       // check that function calls execute successfully
-      run(boundFoo, boundBar);
+      const [fooResult, barResult] = run(boundFoo, boundBar);
+      checkAssertion(fooResult === result1);
+      checkAssertion(barResult === result2);
 
       // check that calls to bind with the same set of function+arguments
       // return the same bound function
@@ -66,12 +72,14 @@ function runTests() {
 
     foo() {
       checkAssertion(this === instance);
+      return result1;
     }
 
     bar(myArg, mySecondArg) {
       checkAssertion(this === instance);
       checkAssertion(myArg === argument1);
       checkAssertion(mySecondArg === argument2);
+      return getBarResult(myArg, mySecondArg);
     }
   }
 
