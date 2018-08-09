@@ -1,0 +1,27 @@
+{
+  "name": "bind-cache",
+  "version": "0.1.0",
+  "description": "Bound method cache, ideal for React",
+  "main": "index.js",
+  "scripts": {
+    "prepublish": "node test.js",
+    "test": "node test.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/benwiley4000/bind-cache.git"
+  },
+  "keywords": [
+    "bind",
+    "cache",
+    "react",
+    "bound",
+    "method"
+  ],
+  "author": "Ben Wiley",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/benwiley4000/bind-cache/issues"
+  },
+  "homepage": "https://github.com/benwiley4000/bind-cache#readme"
+}
